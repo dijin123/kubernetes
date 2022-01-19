@@ -36,7 +36,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/a
 **Step 5: Accessing the Dashboard UI **
 To protect your cluster data, Dashboard deploys with a minimal RBAC configuration by default. Currently, Dashboard only supports logging in with a Bearer Token. Create a new user using the Service Account mechanism of Kubernetes, grant this user admin permissions and login to Dashboard using a bearer token tied to this user.
 
-apiVersion: v1
+''apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: admin-user
@@ -53,7 +53,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: admin-user
-  namespace: kubernetes-dashboard
+  namespace: kubernetes-dashboard''
 
 Use kubectl apply -f dashboard-adminuser.yaml to create them.
 
